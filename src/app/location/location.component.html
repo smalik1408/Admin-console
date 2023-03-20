@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="content">
+    <div class="cards">
+        <div class="card" [routerLink]="ent.routeall" routerLinkActive="router-link-active"  *ngFor="let ent of enterprise">
+            <div class="box">
+                <h1>{{ent.id}}</h1>
+                <h3>{{ent.link}}</h3>
+            </div>
+            <div class="icon-case">
+                <img src="/assets/images/students.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>

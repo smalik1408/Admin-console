@@ -1,0 +1,15 @@
+<div class="header">
+
+  <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggled()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+
+  <ul class="breadcrumb">
+    <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item">
+      <a routerLink="{{breadcrumb.url}}">
+        {{ breadcrumb.label }}
+      </a>
+    </li>
+  </ul>
+</div>

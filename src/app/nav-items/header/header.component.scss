@@ -1,0 +1,84 @@
+body {
+    margin: 2em;
+  }
+  body, input[text], button {
+    color: #888;
+    font-family: Cambria, Georgia;
+  }
+  // a {
+  //   cursor: pointer;
+  //   cursor: hand;
+  // }
+
+  // nav a {
+  //   padding: 5px 10px;
+  //   text-decoration: none;
+  //   margin-right: 10px;
+  //   margin-top: 10px;
+  //   display: inline-block;
+  //   background-color: #eee;
+  //   border-radius: 4px;
+  // }
+  // nav a:visited, a:link {
+  //   color: #607D8B;
+  // }
+  // nav a:hover {
+  //   color: #039be5;
+  //   background-color: #CFD8DC;
+  // }
+  // nav a.active {
+  //   color: #039be5;
+  // }
+  
+  /* everywhere else */
+  // * {
+  //   font-family: Arial, Helvetica, sans-serif;
+  // }
+  
+  
+  // .breadcrumb {
+  //   //   padding: 10px 12px;
+  //   //   list-style: none !important;
+  //   //   list-style-type: none;
+  //   //   background-color: burlywood;
+  //   //   width: 100%;
+  //   //   align-items: center;
+  //   //   justify-content: center;
+      
+  //   //   height: 100%;
+  //   //   font-weight: 750;
+  // }
+  .breadcrumb li {
+      display: inline;
+      font-size: 12px;
+  }
+  .breadcrumb li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+  }
+  .breadcrumb li a {
+      color: black;
+      text-decoration: none;
+      font-size: large;
+  }
+  ol.breadcrumb li a:hover {
+      color: #01447e;
+      text-decoration: underline;
+  }
+  
+
+  .fa-bars {
+    padding: 5px;
+    left: 0px;
+    position: absolute;
+  }
+
+
+
+
+  /*
+  Copyright 2017-2018 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license
+  */

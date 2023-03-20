@@ -1,0 +1,178 @@
+<!-- 
+<button type="button" class="btn btn primary">Create New</button>
+
+<div class="mat-elevation-z8">
+    
+    <table class="table" mat-table [dataSource]="empdetails">
+      <tr>
+      
+        <ng-container matColumnDef="CouponID" style="text-align: center;">
+          <th align="center" mat-header-cell *matHeaderCellDef style="text-align: center; width: 10px;">CouponID</th>
+          <td mat-cell *matCellDef="let element" class="col-md-3" style="text-align: center;">{{ element.CouponID }}</td>
+        </ng-container>
+        <ng-container matColumnDef="EnterpriseID" style="text-align: center;">
+            <th align="center" mat-header-cell *matHeaderCellDef style="text-align: center;">EnterpriseID</th>
+            <td mat-cell *matCellDef="let element" class="col-md-3" style="text-align: center;">{{ element.EnterpriseID }}</td>
+          </ng-container>
+          <ng-container matColumnDef="CouponTitle" style="text-align: center;">
+            <th align="center" mat-header-cell *matHeaderCellDef style="text-align: center;">CouponTitle</th>
+            <td mat-cell *matCellDef="let element" class="col-md-3" style="text-align: center;">{{ element.CouponTitle }}</td>
+          </ng-container>
+          <ng-container matColumnDef="Description" style="text-align: center;">
+            <th align="center" mat-header-cell *matHeaderCellDef style="text-align: center;">Description</th>
+            <td mat-cell *matCellDef="let element" class="col-md-3" style="text-align: center;">{{ element.Description }}</td>
+          </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th align="center" mat-header-cell *matHeaderCellDef style="text-align:left;"> Edit</th>
+          <td mat-cell *matCellDef="let element let i = index" class="col-md-3">
+            <a [routerLink]="['../update-location']" >Edit
+            </a>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th align="center" mat-header-cell *matHeaderCellDef style="text-align: left;"> Delete</th>
+          <td mat-cell *matCellDef="let element" class="col-md-4">
+            <a style="justify-content: center;" [routerLink]="['../location']" >
+           delete
+            </a>
+          </td>
+        </ng-container>
+
+
+      </tr>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator style="display: contents" #paginator 
+    [pageSizeOptions]="pageSizes" [pageSizeOptions]="[5, 10, 15]"
+    aria-label="Select page">
+    </mat-paginator>
+</div>
+
+
+  
+    
+
+    
+    <!-- <mat-toolbar>
+      <mat-toolbar-row>
+        <a type="button" class="btn btn-primary" routerLink="../create-location">New Location</a>
+        <div>
+          <mat-paginator style="display: contents" #paginator [length]="totalRows" [pageIndex]="currentPage"
+            [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            aria-label="Select page">
+          </mat-paginator>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar> -->
+  
+
+<!-- <button type="button" class="btn btn success ">Create New</button>
+<br>
+<br>
+<table class="table table-bordered" style="background-color: white;" >
+    <thead >
+      <tr>
+        <th scope="col">CouponID</th>
+        <th scope="col">EnterpriseID</th>
+        <th scope="col">CouponTitle</th>
+        <th scope="col">Description</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let item of EmpData">
+        <td>{{item.CouponID}}</td>
+        <td>{{item.EnterpriseID}}</td>
+        <td>{{item.CouponTitle}}</td>
+        <td>{{item.Description}}</td>
+        <td> <a type="button"  routerLink="../create-location">Edit</a></td>
+        <td> <a type="button"  routerLink="../create-location">Delete</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+  <mat-paginator style="display: contents" #paginator 
+[pageSizeOptions]="pageSizes" [pageSizeOptions]="[5, 10, 15]"
+aria-label="Select page">
+</mat-paginator> --> 
+
+
+
+ <div class="example-container mat-elevation-z8">
+  
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)"
+      #input placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="CouponID">
+      <mat-header-cell *matHeaderCellDef> CouponID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.CouponID}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="EnterpriseID">
+      <mat-header-cell *matHeaderCellDef> EnterpriseID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.EnterpriseID}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CouponTitle">
+      <mat-header-cell *matHeaderCellDef> CouponTitle </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.CouponTitle}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> <a style="justify-content: center;" [routerLink]="['../update-location']" >Edit
+      </a> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">  <a style="justify-content: center;" [routerLink]="['../location']" >
+        Delete
+         </a> </mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="edit">
+      <th align="center" mat-header-cell *matHeaderCellDef style="text-align:left;"> Edit</th>
+      <td mat-cell *matCellDef="let element let i = index" class="col-md-3">
+        <a [routerLink]="['../update-location']" >Edit
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th align="center" mat-header-cell *matHeaderCellDef style="text-align: left;"> Delete</th>
+      <td mat-cell *matCellDef="let element" class="col-md-4">
+        <a style="justify-content: center;" [routerLink]="['../location']" >
+       delete
+        </a>
+      </td>
+    </ng-container> -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>
